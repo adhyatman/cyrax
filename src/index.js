@@ -14,7 +14,6 @@ const middleware = applyMiddleware(thunk, logger);
 
 const store = createStore(reducers, middleware);
 
-
 store.dispatch((dispatch) => {
   dispatch({type: "FETCH_USERS_START"});
   axios.get("http://rest.learncode.academy/api/wstern/users")
