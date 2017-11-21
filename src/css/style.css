@@ -1,5 +1,5 @@
 body{
-  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  font: 12px/1.5 Arial, Helvetica,sans-serif;
   padding:0;
   margin:0;
   background-color:#f4f4f4;
@@ -36,18 +36,16 @@ ul{
 
 /* Header **/
 header{
-  background:#35424a;
-  color:#ffffff;
   padding-top:30px;
-  min-height:70px;
+  min-height:50px;
   border-bottom:#e8491d 3px solid;
 }
 
 header a{
-  color:#ffffff;
+  color:#727272;
   text-decoration:none;
   text-transform: uppercase;
-  font-size:16px;
+  font-size:13px;
 }
 
 header li{
@@ -56,17 +54,18 @@ header li{
   padding: 0 20px 0 20px;
 }
 
-header #branding{
+header #logo {
   float:left;
+  margin-top: -7px;
 }
 
-header #branding h1{
+header #logo h1{
   margin:0;
 }
 
 header nav{
   float:right;
-  margin-top:10px;
+  margin-top:3px;
 }
 
 header .highlight, header .current a{
@@ -75,7 +74,7 @@ header .highlight, header .current a{
 }
 
 header a:hover{
-  color:#cccccc;
+  color:black;
 }
 
 /* Showcase */
@@ -163,15 +162,15 @@ ul#services li{
 
 footer{
   padding:20px;
-  margin-top:20px;
-  color:#ffffff;
+  margin-top:0px;
+  color:#ffb9a5;
   background-color:#e8491d;
   text-align: center;
 }
 
 /* Media Queries */
 @media(max-width: 768px){
-  header #branding,
+  header #logo,
   header nav,
   header nav li,
   #newsletter h1,
