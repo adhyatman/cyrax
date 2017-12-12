@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Markers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #wrapper { position: relative; overflow: hidden;}
+      #map {
+        width: 100%;
+        height: 750px;
+        border: 16px solid rgb(226, 225, 224);
+        position: relative;
+        overflow: hidden;
+        transform: translateZ(0px);
+       }
+      #over-map {
+        background: black;
+        position: absolute;
+        z-index: 99;
+        width: 40%;
+        top: 0;
+        height: 400px;
+        opacity: 0.8;
+        filter: alpha(opacity=90);
+        color: white;
+        top: 70px; left: 70px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <div id="map"></div>
+      <div id="over-map">
+        <button onmouseover="popEventMarker('A')">Evento A</button>
+        <button onmouseover="popEventMarker('B')">Evento B</button>
+      </div>
+    </div>
+
+    <script>
+      var map;
+      var iconBase = './mapmarkers/';
+      var mapCoordinates = {lat: -30.4042697, lon: -54.9634558};
+
+      function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: new google.maps.LatLng(mapCoordinates.lat, mapCoordinates.lon),
+          mapTypeId: 'roadmap'
+        });
+
+        var svgIcons = {
+          eventoDestaque:       {svgFile: iconBase + 'Descobrir_Pin_Evento_Destaque.svg'},
+          evento:               {svgFile: iconBase + 'Descobrir_Pin_Evento.svg'},
+          experienciasDestaque: {svgFile: iconBase + 'Descobrir_Pin_Experiencias_Destaque.svg'},
+          experiencias:         {svgFile: iconBase + 'Descobrir_Pin_Experiencias.svg'},
+          treinoDestaque:       {svgFile: iconBase + 'Descobrir_Pin_Treino_Destaque.svg'},
+          treino:               {svgFile: iconBase + 'Descobrir_Pin_Treino.svg'}
+        };
+
+        var sprintaEvents = [
+          {position: new google.maps.LatLng(-29.1329722,-52.8939062), type: 'eventoDestaque'},
+          {position: new google.maps.LatLng(-29.6176417,-52.1949011), type: 'evento'},
+          {position: new google.maps.LatLng(-30.1736266,-52.4366003), type: 'experienciasDestaque'},
+          {position: new google.maps.LatLng(-30.6249158,-52.1578223), type: 'experiencias'},
+          {position: new google.maps.LatLng(-29.5292573,-50.2063757), type: 'treinoDestaque'},
+          {position: new google.maps.LatLng(-28.654443, -50.3382117), type: 'treino'}
+        ];
+
+        sprintaEvents.forEach(sprintaEvent => {
+
+          let icon = {
+            url: svgIcons[sprintaEvent.type].svgFile,
+          };
+
+          let marker = new google.maps.Marker({
+            position: sprintaEvent.position,
+            icon: icon,
+            map: map,
+            animation: google.maps.Animation.DROP
+          });
+
+          marker.addListener('mouseover', () => {
+              marker.setIcon({
+                ...icon,
+                anchor: new google.maps.Point(23, 45), // this is the proper anchor point for scale 0.65
+                scaledSize: new google.maps.Size(45, 45)
+              });
+          });
+
+          marker.addListener('mouseout', () => {
+            marker.setIcon({
+              ...icon,
+              anchor: new google.maps.Point(15, 38),
+              scaledSize: new google.maps.Size(30, 40)
+            });
+          });
+        });
+      }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZu3ttx6JZhcVhx-kV3Hx4s4JXedwMlMM&callback=initMap"></script>
+  </body>
+</html>
