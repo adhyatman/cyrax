@@ -360,8 +360,13 @@ blockquote > footer {
   text-align: right;
 }
 
-.paragrah_begin {
+.paragraph_begin {
   font-family: 'Kalam', serif;
   font-size: 1.25em;
   color: #35808e;
+}
+
+p > a:hover {
+  color: #35808e;
+  text-decoration: none;
 }

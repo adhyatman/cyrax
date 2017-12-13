@@ -8,13 +8,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <script>
-    function loadImagesBasedOnTheDayOfTheWeek() {
-      var dayOfTheWeek = new Date().getDay(); // 0: Sunday, ..., 6: Saturday
-    }
-  </script>
-
 </head>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
@@ -140,9 +133,7 @@ body, html {
 
 <div class="w3-content w3-container w3-padding-64" id="yoga">
   <h3 class="w3-center">
-    <blockquote>
-      <cite>Todas as faculdades estão latentes em você. Desenvolva-as.</cite>
-      <footer><cite>— Sivananda</cite></footer>
+    <blockquote id="citacao">
     </blockquote>
   </h3>
   <p class="w3-padding-large">
@@ -156,22 +147,31 @@ body, html {
 
     <div class="w3-col m3 w3-center w3-padding-large">
       <span><b>KRIYA YOGA</b></span>
-      <img src="./w3images/babaji.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+      <img src="./w3images/babaji.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="333">
+      <p>
+        A Kriya Hatha Yoga, um dos cinco ramos da Kriya Yoga de <a href="https://pt.wikipedia.org/wiki/Mahavatar_Babaji" title="Wikipedia: Mahavatar Babaji" target="_blank">Babaji Nagaraj</a>, é a arte científica da mestria
+        do corpo físico através de asanas, bandhas, mudras, pranayamas e meditação. Ao fortalecer chakras e eliminar
+        bloqueios energéticos, o fluir da energia vital toma lugar, melhorando a imunidade biológica
+        e mantendo o corpo livre de desordens funcionais.
+      </p>
     </div>
 
     <div class="w3-col m3 w3-center w3-padding-large">
       <span><b>TANTRA YOGA</b></span>
-      <img src="./w3images/tantra.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+      <img src="./w3images/tantra.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="333">
+      <p>
+        O <a href="https://pt.wikipedia.org/wiki/Tantra" title="Wikipedia: Tantra" target="_blank">Tantra</a> (<em>Tan: expansão, tra: liberação</em>), baseia-se no culto
+        da união das forças ativa e masculina de Shiva com a passiva e feminina de Shakti. A aula de Tantra é composta
+        de posturas, práticas respiratórias, relaxamento, meditação e automassagem. Além dos benefícios físicos
+        e emocionais, o Tantra outorga autoconhecimento, reforça autoestima e força de vontade.
+      </p>
     </div>
 
     <div class="w3-col m3 w3-center w3-padding-large">
       <span><b>HATHA YOGA</b></span>
-      <img src="./w3images/nataraj.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Swami Sivananda" width="500" height="333">
+      <img src="./w3images/nataraj.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="333">
       <p>
-        Reconhecido médico e sábio indiano do século XX, Sivananda propôs uma sequência de exercícios respiratórios,
-        posturas e relaxamento combinados a partir das clássicas escrituras.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint.
       </p>
     </div>
 
@@ -181,6 +181,8 @@ body, html {
       <p>
         Reconhecido médico e sábio indiano do século XX, <a href="https://pt.wikipedia.org/wiki/Swami_Sivananda" title="Wikipedia: Swami Sivananda" target="_blank">Sivananda</a> propôs uma sequência de exercícios respiratórios,
         posturas e relaxamento combinados a partir das clássicas escrituras do Hatha Yoga.
+        Prática que equilibra sistema nervoso simpático e parassimpático través da precisão nas posturas e
+        profundo relaxamento ao fim da aula.
       </p>
     </div>
 
@@ -478,6 +480,30 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+function loadRandomStuff() {
+  let n = Math.floor(Math.random() * 2); // returns a number between 0 and 3
+
+  let s = "";
+
+  switch (n) {
+    case 4: break;
+
+    case 5: break;
+
+    case 6: break;
+
+    case 7: break;
+
+    default:
+      s = "<cite>Todas as faculdades estão latentes em você. Desenvolva-as.</cite>" +
+      "<footer><cite>— Sivananda</cite></footer>";
+  }
+
+  document.getElementById("citacao").innerHTML = s;
+}
+
+loadRandomStuff();
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZu3ttx6JZhcVhx-kV3Hx4s4JXedwMlMM&callback=myMap"></script>
 </body>
