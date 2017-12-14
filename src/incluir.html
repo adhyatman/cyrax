@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./incluir.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
@@ -72,7 +73,7 @@ body, html {
 
     <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lightbulb-o"></i> SOBRE</a>
-    <a href="#yoga" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-heart"></i> YOGA & MEDITAÇÃO</a>
+    <a href="#yoga" class="w3-bar-item w3-button w3-hide-small">ॐ YOGA & MEDITAÇÃO</a>
     <a href="#horarios" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-clock-o"></i> HORÁRIOS</a>
     <a href="#galeria" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> GALERIA</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTATO</a>
@@ -91,7 +92,11 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-home w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="rounded-corner w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ESPAÇO INCLUIR</span>
+    <div class="rounded-corner-x w3-center w3-padding-large w3-black w3-animate-opacity center-logo">
+      <span class="logo-espaco">ESPAÇO</span>
+      <span class="logo-incluir">incluir</span>
+      <!-- <span class="logo-footer">ESPAÇO DE DESENVOLVIMENTO HUMANO</span> -->
+    </div>
   </div>
 </div>
 
@@ -149,7 +154,7 @@ body, html {
       <span><b>KRIYA YOGA</b></span>
       <img src="./w3images/babaji.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="333">
       <p>
-        A Kriya Hatha Yoga, um dos cinco ramos da Kriya Yoga de <a href="https://pt.wikipedia.org/wiki/Mahavatar_Babaji" title="Wikipedia: Mahavatar Babaji" target="_blank">Babaji Nagaraj</a>, é a arte científica da mestria
+        A Kriya Hatha Yoga, um dos cinco ramos da <a href="http://www.babajiskriyayoga.net/portuguese/home.php" title="Kriya Yoga" target="_blank">Kriya Yoga</a> de <a href="https://josetadeuarantes.wordpress.com/2012/02/16/babaji-o-grande-avatar-de-nossa-era/" title="Wikipedia: Mahavatar Babaji" target="_blank">Babaji Nagaraj</a>, é a arte científica da mestria
         do corpo físico através de asanas, bandhas, mudras, pranayamas e meditação. Ao fortalecer chakras e eliminar
         bloqueios energéticos, o fluir da energia vital toma lugar, melhorando a imunidade biológica
         e mantendo o corpo livre de desordens funcionais.
@@ -181,30 +186,11 @@ body, html {
       <p>
         Reconhecido médico e sábio indiano do século XX, <a href="https://pt.wikipedia.org/wiki/Swami_Sivananda" title="Wikipedia: Swami Sivananda" target="_blank">Sivananda</a> propôs uma sequência de exercícios respiratórios,
         posturas e relaxamento combinados a partir das clássicas escrituras do Hatha Yoga.
-        Prática que equilibra sistema nervoso simpático e parassimpático través da precisão nas posturas e
+        Prática que equilibra sistema nervoso simpático e parassimpático através da precisão nas posturas e
         profundo relaxamento ao fim da aula.
       </p>
     </div>
 
-  </div>
-</div>
-
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">14+</span><br>
-    Partners
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Projects Done
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-    Happy Clients
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Meetings
   </div>
 </div>
 
@@ -482,22 +468,25 @@ function toggleFunction() {
 }
 
 function loadRandomStuff() {
-  let n = Math.floor(Math.random() * 2); // returns a number between 0 and 3
+  let n = Math.floor(Math.random() * 3); // returns a number between 0 and 2
 
   let s = "";
 
   switch (n) {
-    case 4: break;
+    case 0:
+      s = "<cite>Yoga é o aquietamento das ondas mentais.</cite>" +
+      "<footer><cite>— Patanjali</cite></footer>";
+      break;
 
-    case 5: break;
+    case 1:
+      s = "<cite>Meditar é recordar que não somos um corpo mortal, mas uma alma imortal.</cite>" +
+      "<footer><cite>— Yogananda</cite></footer>";
+      break;
 
-    case 6: break;
-
-    case 7: break;
-
-    default:
+    case 2:
       s = "<cite>Todas as faculdades estão latentes em você. Desenvolva-as.</cite>" +
       "<footer><cite>— Sivananda</cite></footer>";
+      break;
   }
 
   document.getElementById("citacao").innerHTML = s;

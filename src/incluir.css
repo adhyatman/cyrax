@@ -114,7 +114,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
 .w3-spin{animation:w3-spin 2s infinite linear}@keyframes w3-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
 .w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
-.w3-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.w3-animate-opacity{animation:opac 4s}@keyframes opac{from{opacity:0} to{opacity:1}}
 .w3-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
 .w3-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
 .w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
@@ -332,6 +332,10 @@ transition: 1s ease;
   border-radius: 4px;
 }
 
+.rounded-corner-x {
+  border-radius: 6px;
+}
+
 .footer-fb:hover {
   color: #3b5998;
 }
@@ -369,4 +373,33 @@ blockquote > footer {
 p > a:hover {
   color: #35808e;
   text-decoration: none;
+}
+
+.logo-espaco {
+  font-size: 17px;
+  letter-spacing: 30px;
+  margin-right: -30px;
+  display: block;
+  position: absolute;
+  padding-top: 2px;
+}
+
+.logo-incluir {
+  margin-top: 18px;
+  float: left;
+  font-size: 5.3em;
+  font-family: 'Pacifico', serif;
+  margin-bottom: -10px;
+}
+
+.logo-footer {
+  font-size: 0.7em;
+  float: left;
+}
+
+.center-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
