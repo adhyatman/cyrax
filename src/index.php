@@ -1,3 +1,36 @@
+<!--<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $email   = $_POST["email"];
+  $subject = "Mensagem recebida de " . $_POST["nome"] . ' (' . $email . ')';
+  $message = $_POST["mensagem"];
+
+  mail('contato@espacoincluir.com', $subject, $message);
+  header('Location: index.php?sent=1#contact');
+}
+
+$quote  = null;
+$random = rand(0, 2);
+
+switch ($random) {
+  case 0:
+    $quote = "<cite>Yoga é o aquietamento das ondas mentais.</cite>
+              <footer><cite>— Patanjali</cite></footer>";
+    break;
+
+  case 1:
+    $quote = "<cite>Meditar é recordar que não somos um corpo mortal, mas uma alma imortal.</cite>
+              <footer><cite>— Yogananda</cite></footer>";
+    break;
+
+  case 2:
+    $quote = "<cite>Todas as faculdades estão latentes em você. Desenvolva-as.</cite>
+              <footer><cite>— Sivananda</cite></footer>";
+    break;
+}
+
+?>-->
+
 <!DOCTYPE html>
 <html>
 <title>Incluir | Espaço de Desenvolvimento Humano</title>
@@ -103,30 +136,48 @@ body, html {
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">O ESPAÇO</h3>
-  <p>Nosso maior valor é a inclusão de todos, cada qual com seus processos evolutivos individuais.
-     Nossa missão é ajudar a desenvolver em cada ser humano um olhar transformador diante da própria vida,
-     a fim de buscar o auto-conhecimento, o bem-estar e o despertar do seu processo evolutivo.
-     Acreditamos que todas as pessoas são capazes de se desenvolver em suas potencialidades, co-criando suas
-     realidades de forma criativa e articulada com as comunidades, grupos familiares, escolares e profissionais.</p>
-     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <p>
+     Somos seres em evolução na diversidade da vida.
+     Nossos processos evolutivos passam pelo despertar e busca do desenvolvimento pessoal.
+     Nessa busca, muitas vezes, necessitamos de apoio e de um caminho orientador.
+     O Espaço Incluir oferece acolhida afetuosa, escuta significativa e caminhos tera pêuticos transformadores.
+     Nosso maior valor é a inclusão de todas as pessoas, cada qual com sua particular história e processos internos físicos, energéticos,  mentais, emocionais e espirituais.
+     Nosso maior propósito é unir olhares e caminhos em torno de um objetivo comum, o desenvolvimento evolutivo pessoal e coletivo.
+     Nossa maior missão é ajudar a desenvolver em cada ser humano, que aceita o chamado e chega até nós, um olhar transformador diante da vida, co-criando sua própria realidade.
+     Todos os caminhos são importantes e significam para alguém em algum momento de sua história.
+     Nem todos os caminhos são para sempre, nem todos os caminhos significam igualmente para todos.
+     Mas todos precisam de um caminho em movimento.<br><br><br><br><br>
+   </p>
 </div>
 
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">14+</span><br>
-    Partners
+    <span class="w3-xlarge">Foto+</span><br>
+    Kriya
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Projects Done
+    <span class="w3-xlarge">Foto+</span><br>
+    Tantra
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-    Happy Clients
+    <span class="w3-xlarge">Foto+</span><br>
+    Reiki
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Meetings
+    <span class="w3-xlarge">Foto+</span><br>
+    Coaching
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Foto+</span><br>
+    Psicologia
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Foto+</span><br>
+    Sivananda
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">Foto+</span><br>
+    Terapia Sistêmica
   </div>
 </div>
 
@@ -139,6 +190,7 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="yoga">
   <h3 class="w3-center">
     <blockquote id="citacao">
+      <?= $quote; ?>
     </blockquote>
   </h3>
   <p class="w3-padding-large">
@@ -382,7 +434,7 @@ body, html {
       <img src="./w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
   </div>
-  <button class="w3-button w3-padding-large w3-light-grey rounded-corner" style="margin-top:32px">MAIS FOTOS</button>
+  <button class="w3-button w3-padding-large w3-light-grey rounded-corner" style="margin-top:32px">Mais fotos</button>
 </div>
 
 <!-- Fourth Parallax Image with Portfolio Text -->
@@ -395,17 +447,30 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="contact">
   <h3 class="w3-center">ONDE ESTAMOS</h3>
   <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m7 w3-container">
+    <div class="w3-col m6 w3-container">
       <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
     </div>
-    <div class="w3-col m5 w3-panel">
+    <div class="w3-col m6 w3-panel">
       <div class="w3-large w3-margin-bottom">
         <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Miguel Tostes, 648 · Porto Alegre · RS<br>
         <i class="fa fa-whatsapp fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> (51) 9 81 89 47 75<br>
         <i class="fa fa-envelope-o fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> contato@espacoincluir.com.br<br>
       </div>
-      <p>Apareça para uma <i class="fa fa-coffee"></i> de chá, ou envie sua mensagem.</p>
-      <!-- <p>A casa é bike friendly! Sua <i class="fa fa-bicycle"></i> está segura em nosso pátio.</p> -->
+      <p>Apareça para uma <i class="fa fa-coffee"></i> de chá, ou envie sua mensagem:</p>
+      <form method="POST" action="index.php">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Nome" required name="nome">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email ou celular" required name="email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="mensagem">
+        <button class="w3-button w3-light-grey rounded-corner w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> <?= $_GET["sent"] == '1' ? 'Mensagem enviada' : 'Enviar' ?>
+        </button>
+      </form>
     </div>
   </div>
 </div>
@@ -466,33 +531,6 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-
-function loadRandomStuff() {
-  let n = Math.floor(Math.random() * 3); // returns a number between 0 and 2
-
-  let s = "";
-
-  switch (n) {
-    case 0:
-      s = "<cite>Yoga é o aquietamento das ondas mentais.</cite>" +
-      "<footer><cite>— Patanjali</cite></footer>";
-      break;
-
-    case 1:
-      s = "<cite>Meditar é recordar que não somos um corpo mortal, mas uma alma imortal.</cite>" +
-      "<footer><cite>— Yogananda</cite></footer>";
-      break;
-
-    case 2:
-      s = "<cite>Todas as faculdades estão latentes em você. Desenvolva-as.</cite>" +
-      "<footer><cite>— Sivananda</cite></footer>";
-      break;
-  }
-
-  document.getElementById("citacao").innerHTML = s;
-}
-
-loadRandomStuff();
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZu3ttx6JZhcVhx-kV3Hx4s4JXedwMlMM&callback=myMap"></script>
 </body>
